@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import MainSlider from "../components/MainSlider";
 
 const Main = () => {
     return (
-        <div>Main</div>
+        <>
+            <MainSlider />
+        </>
     )
 }
 

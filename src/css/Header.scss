@@ -1,12 +1,20 @@
 @use 'common';
 
 .Header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     line-height: 8rem;
-    background: common.$wc;
+
+    &.on .gnb {
+        background: common.$wc;
+    }
 
     .gnb {
         position: relative;
+        transition: 0.5s;
 
         ul {
             display: flex;
@@ -24,6 +32,17 @@
 
                 span {
                     position: absolute;
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1.25rem;
+                    padding: 0.5rem;
+                    top: 1.5rem;
+                    right: -1rem;
+                    background: common.$mc;
+                    color: common.$wc;
+                    border-radius: 50%;
+                    line-height: 0.8;
+                    text-align: center;
                 }
             }
         }
