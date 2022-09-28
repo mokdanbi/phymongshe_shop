@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
 const Itm = ({ shopList, cart, setCart }) => {
     const { itm } = useParams();
     const navigate = useNavigate();
     const matchItm = shopList.find(it => itm == it.id);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        return () => {
+            window.scrollTo(0, 0);
+        }
+    }, [])
+    
     return (
         <section className='shopItm'>
             <div>
