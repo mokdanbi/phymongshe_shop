@@ -1,15 +1,16 @@
 @use 'common';
 
 .Header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     z-index: 999;
-    line-height: 8rem;
+    line-height: 7.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
     &.on .gnb {
-        background: common.$wc;
+        background: common.$wColor;
     }
 
     .gnb {
@@ -38,8 +39,8 @@
                     padding: 0.5rem;
                     top: 1.5rem;
                     right: -1rem;
-                    background: common.$mc;
-                    color: common.$wc;
+                    background: common.$mainColor;
+                    color: common.$wColor;
                     border-radius: 50%;
                     line-height: 0.8;
                     text-align: center;

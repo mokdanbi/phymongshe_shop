@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
+    useEffect(() => {
+        setCart(cart.filter((itm, idx, arry) => idx === arry.findIndex(it => it.id === itm.id)))
+    }, [])
+    // cart = cart.filter((itm, idx, arry) => idx === arry.findIndex(it => it.id === itm.id))
     return (
         <div style={{ paddingTop: '500px' }}>
             {
-                cart.map(ct => {
+                cart.map((ca, idx) => {
                     return (
-                        <ul>
-                            <li>{ct.id}</li>
-                            <li>{ct.itm}</li>
-                            <li>{ct.price}</li>
+                        <ul key={idx}>
+                            <li>{ca.id}</li>
+                            <li>{ca.itm}</li>
+                            <li>{ca.e} 개 사고파요...</li>
                         </ul>
                     )
+
                 })
             }
         </div>
     )
 }
 
-export default Cart
+export default Cart;
